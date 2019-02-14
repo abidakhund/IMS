@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *; img-src 'self' data: content:;" />
+	<title></title>
+	
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/framework.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="js/lokijs.js"></script>
+	<script type="text/javascript" src="js/loki-indexed-adapter.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/jqueryui.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/framework-plugins.js"></script>
+	<script type="text/javascript" src="js/JsBarcode.all.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<script type="text/javascript" src="js/view.js"></script>
+
+	<script> 
+	    $(function(){
+	      $(".leftMenu").load("left_menu.html"); 
+	    });
+
+	</script> 
+</head>
+
+<body class="left-sidebar" onload = "loadCombosForSearch();" >
+	<div id="header-fixed" class="header-style-1"> <a class="header-1 open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
+  <h2 class="header-logo" href="#">Search</h2>
+  </div>
+	<div class="all-elements">
+		<div class="snap-drawers">
+		  	<div class="snap-drawer snap-drawer-left leftMenu"></div>
+		  
+			<div id="content" class="snap-content">
+				<div class="content">
+				  	<div class="header-clear-large"></div>
+				  	<!--Page content goes here, fixed elements go above the all elements class-->
+				 
+				    <div class="container">
+					      <ul class="tabs">
+					        <li class="tab-link active-tab" data-tab="tab-2">Search Items</li>
+					      </ul>
+				
+						<form 
+							class="detail_form add_asset_form" id="search_form" method="post">
+							
+							<div id="tab-2" class="tab-content other-tab" style="display: block;">
+															
+							<h4>Folder Name</h4>
+								<div>
+								 <select id="folder_id" name="folder_id">
+								    <option value="">Select Folder</option>
+								  </select>
+								</div>
+<!-- 							<h4>Box</h4>
+								<div>
+								  <select id="f5box" name="f5box">
+								    <option value="">Select Box</option>
+								  </select>
+								</div>
+								<h4>Type</h4>
+								<div>
+								   <select id="f5type" name="f5type">
+								    <option value="">Select type</option>
+								  </select>
+								</div>	 -->
+								<h4>Major Categories</h4>
+								<div>
+								  <select id="major_id" name="major_id" onchange="getMajorCategoriesValue(this.value)">
+								    <option value="">Select Major Category</option>
+								  </select>
+								</div>
+								<h4>Minor Categories</h4>
+								<div>
+								  <select id="minor_id" name="minor_id">
+								    <option value="">Select Minor Category</option>
+								  </select>
+								</div>
+								 <h4>Key Text</h4>
+								<div>
+								  <input type="text" name="f5keytext" id="f5keytext">
+								</div> 	
+								<h4>Key Text 2</h4>
+								<div>
+								  <input type="text" name="f5keytext2" id="f5keytext2">
+								</div> 	
+								<h4>Key Text 3</h4>
+								<div>
+								  <input type="text" name="f5keytext3" id="f5keytext3">
+								</div> 							
+								<h4>Key Date</h4>
+								<div>
+								  <input type="date" name="f5keydate" id="f5keydate">
+								</div>
+								<h4>Key Date 2</h4>
+								<div>
+								  <input type="date" name="f5keydate2" id="f5keydate2">
+								</div>
+								<h4>Key Amt 1</h4>
+								<div>
+								  <input type="text" name="f5keyamt1" id="f5keyamt1">
+								</div> 
+								<h4>Key Amt 2</h4>
+								<div>
+								  <input type="text" name="f5keyamt2" id="f5keyamt2">
+								</div> 
+								<h4>Key Amt 3</h4>
+								<div>
+								  <input type="text" name="f5keyamt3" id="f5keyamt3">
+								</div> 
+								<input type="hidden" name="action" id="action" value="search">
+								<input type="hidden" name="search_type" id="search_type" value="Wide Search">
+							<button type="submit" class="button button-dark button_with submit_button">Search</button>
+						</form>
+						</div>
+					</div>  
+				        <!-- End of entire page content--> 
+				</div>
+			</div>
+		</div>
+	</div>
+		<script> 
+	 
+	    $(document).ready(function () {
+	document.addEventListener("deviceready", function(){
+			document.addEventListener("backbutton", onBackKeyDown, false);
+		}, false);
+	
+	function onBackKeyDown(){
+		window.location = "dashboard.html";
+	}
+});
+
+	</script> 
+</body>

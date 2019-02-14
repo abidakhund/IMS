@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *" />
+<title></title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/framework.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+
+<script src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script> 
+    $(function(){
+      	$(".leftMenu").load("left_menu.html"); 
+    });
+</script>
+</head>
+
+<body class="left-sidebar">
+<div id="header-fixed" class="header-style-1"> <a class="header-1 open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
+  <h2 class="header-logo" href="#">Dashboard</h2>
+  </div>
+
+<div class="all-elements">
+  <div class="snap-drawers">
+    <div class="snap-drawer snap-drawer-left leftMenu"></div>
+    
+    <div id="content" class="snap-content">
+      <div class="content">
+        <div class="header-clear-large"></div>
+        <!--Page content goes here, fixed elements go above the all elements class-->
+        
+        <div class="container">
+          <div class="portfolio-two">
+            <div class="portfolio-item container">
+              <div class="menu_box search_asset_bg"> <a href="asset_search.html">
+              <img src="img/search_asset_icon.png"  alt=""> </a>
+                <h3>Search Asset</h3>
+              </div>
+            </div>
+            <div class="portfolio-item container">
+              <div class="menu_box add_asset_bg"> <a href="asset_add.html" data-transition="slide"><img src="img/add_asset_icon.png"  alt=""> </a>
+                <h3>Add Asset</h3>
+              </div>
+            </div>
+            <div class="portfolio-item container">
+              <div class="menu_box scan_asset_bg"> <a href="box.html" >
+              <img src="img/cube.png"  alt=""> </a>
+                <h3>Box</h3>
+              </div>
+            </div>
+            <div class="portfolio-item container">
+              <div class="menu_box immoveable_asset_bg"> <a href="type.html"><img src="img/report_icon.png"  alt=""> </a>
+                <h3>Type</h3>
+              </div>
+            </div>
+              <div class="portfolio-item container">
+              <div class="menu_box immoveable_asset_bg"> <a href="recipe.html"><img src="img/recipe.png"  alt=""> </a>
+                <h3>Recipe</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- End of entire page content--> 
+      </div>
+
+    </div>
+  </div>
+</div>
+  <script> 
+   
+      $(document).ready(function () {
+  document.addEventListener("deviceready", function(){
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }, false);
+  
+  function onBackKeyDown(){
+    window.location = "patient_form.html";
+  }
+});
+
+  </script> 
+</body>

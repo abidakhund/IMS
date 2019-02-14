@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "IMS",
+  "short_name": "IMS",
+  "version": "com.phonegap.IMS",
+  "description": "Inventry Management Sytem",
+  "author": "PhoneGap Team",
+  "icons": [],
+  "start_url": "patient_form.html"
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *" />
+
+    <link href="css/framework.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <script src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jqueryui.js"></script>
+    <script type="text/javascript" src="js/framework-plugins.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+</head>
+
+<body>
+    
+    <!-- LOGIN PAGE STARTS HERE-->
+    
+    <div class="login-bg">
+    <div class="login-layout">
+    <div class="login-logo"> <img src="img/login_icon.png" width="185" height="185" alt=""> </div>
+   <!--  <h2>Inventory Management System</h2> -->
+    <form action="javascript:verifyLogin();">
+        <div>
+          <input type="text" id="username" placeholder="Username">
+        </div>
+        <div>
+          <input type="password" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="pageapp-login-button button button-small button-blue button-fullscreen">Login</button>
+    </form>
+<!--     <p class="center-text" style="color:#fff;">Forgot Password?</p> -->
+<!--  <div id="forgetPassword"style="display: none"> 
+    <a href="recover.html" class="center-text" style="color:#fff;" >Forgot Password?</a>
+ </div> -->
+  </div>
+</div>
+
+    <!-- ALL JS FILES TO BE INCLUDED HERE -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+        <script> 
+        $(document).ready(function () {
+            document.addEventListener("deviceready", function(){
+                    document.addEventListener("backbutton", onBackKeyDown, false);
+                }, false);
+            
+            function onBackKeyDown(){
+                exitAppPopup();
+            }
+        });
+         
+        function exitAppPopup() {
+            navigator.notification.confirm(
+                "Do you really want to close this app?", 
+                function(buttonIndex){
+                    ConfirmExit(buttonIndex);
+                }, 
+                "Confirmation", 
+                "Yes,No"
+            ); 
+            //return false;
+        };
+         
+        function ConfirmExit(stat){
+            if(stat == "1"){
+                navigator.app.exitApp();
+            }else{
+                return;
+            };
+        };
+</script>
+    
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *; img-src * data: content:;" />
+	
+	<title></title>
+	
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/framework.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="js/lokijs.js"></script>
+	<script type="text/javascript" src="js/loki-indexed-adapter.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/jqueryui.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/framework-plugins.js"></script>
+	<script type="text/javascript" src="js/JsBarcode.all.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<script type="text/javascript" src="js/view.js"></script>
+	<script> 
+	    $(function(){
+	      $(".leftMenu").load("left_menu.html"); 
+	    });
+	</script>
+</head>
+
+<body class="left-sidebar" onload="loadSearchData();">
+	<div id="header-fixed" class="header-style-1"> <a class="header-1 open-left-sidebar" href="#">
+		<i class="fa fa-navicon"></i></a> <h2 class="header-logo" href="#">View Asset</h2> 
+		<a class="header-2" href="#" ></a> 
+	</div>
+	<div class="all-elements">
+		<div class="snap-drawers">
+		  	<div class="snap-drawer snap-drawer-left leftMenu"></div>
+		  
+		  	<div id="content" class="snap-content">
+			    <div class="content">
+			      	<div class="header-clear-large"></div>
+			      	<!--Page content goes here, fixed elements go above the all elements class-->
+			
+					<div class="container">
+						<ul class="tabs">
+						 	<li class="tab-link active-tab" data-tab="tab-1">Asset</li>
+							<li class="tab-link" data-tab="tab-3">Image</li> 
+						 </ul>
+						<form class="detail_form">
+						<div id="tab-1" class="tab-content" style="display: block;">
+							
+							
+							<h4>Folder Name</h4>
+							<div>
+							  <input type="text" name="folder" id="folder" disabled>
+							</div>
+<!-- 							
+							<h4>Box</h4>
+							<div>
+							  <input type="text" name="box" id="box" disabled>
+							</div>
+							
+							<h4>Type</h4>
+							<div>
+							  <input type="text" name="type" id="type" disabled>
+							</div> -->
+														
+							<h4>Major Category</h4>
+							<div>
+							  <input type="text" name="f5majorcat" id="f5majorcat" disabled>
+							</div>
+							
+							<h4>Minor Category</h4>
+							<div>
+							  <input type="text" name="f5minorcat" id="f5minorcat" disabled>
+							</div>
+							<h4>Text</h4>
+							<div>
+							  <input type="text" name="text" id="text" disabled>
+							</div>
+							<h4>key text 2</h4>
+							<div>
+							  <input type="text" name="f5keytext2" id="f5keytext2" disabled>
+							</div>
+							<h4>key text 3</h4>
+							<div>
+							  <input type="text" name="f5keytext3" id="f5keytext3" disabled>
+							</div>
+							<h4>Key Date</h4>
+							<div>
+							  <input type="text" name="date" id="date" disabled>
+							</div>
+							<h4>key Date 2</h4>
+							<div>
+							  <input type="text" name="f5keydate2" id="f5keydate2" disabled>
+							</div>
+							<h4>key amt 1</h4>
+							<div>
+							  <input type="text" name="f5keyamt1" id="f5keyamt1" disabled>
+							</div>
+							<h4>key amt 2</h4>
+							<div>
+							  <input type="text" name="f5keyamt2" id="f5keyamt2" disabled>
+							</div>
+							<h4>key amt 3</h4>
+							<div>
+							  <input type="text" name="f5keyamt3" id="f5keyamt3" disabled>
+							</div>
+
+
+						</div>
+
+						<label id='counter'></label>
+						
+						<div id="tab-3" class="tab-content" style="display: none;">
+							<div class="tab-3_content_bg" id="img1" style="display: none;">
+							  	<img src="" id="assetImage1" width="250" height="250" alt="" />
+							</div>
+						  	<div class="tab-3_content_bg" id="img2" style="display: none;">
+							  	<img src="" id="assetImage2" width="250" height="250"  />
+							</div>
+							<div class="tab-3_content_bg" id="img3" style="display: none;">
+							  	<img src="" id="assetImage3" width="250" height="250" />
+							</div>
+							<div class="tab-3_content_bg" id="img4" style="display: none;">
+							  	<img src="" id="assetImage4" width="250" height="250" />
+							</div>
+							<div class="tab-3_content_bg" id="img5" style="display: none;">
+							  	<img src="" id="assetImage5" width="250" height="250"  />
+							</div>
+						</div>
+						<div id ='nextBtn'>
+							<button type="button" class="button button-dark button_with delete_button"  onclick="nextEntry();">Next</button>
+						</div>
+						<div id = 'preBtn' style="display: none;" >
+							<button type="button" class="button button-dark button_with edit_button"  onclick="preEntry();" >Previous</button>
+						</div>
+						
+						
+						</form>
+					</div>     
+			       	<!-- End of entire page content--> 
+			    </div>
+		
+		  	</div>
+		</div>
+   	</div>
+	<script>
+		$(document).ready(function () {
+			document.addEventListener("deviceready", function(){
+					document.addEventListener("backbutton", onBackKeyDown, false);
+				}, false);
+			
+			function onBackKeyDown(){
+				window.location = "asset_search.html";
+			}
+		});
+	</script>
+</body>

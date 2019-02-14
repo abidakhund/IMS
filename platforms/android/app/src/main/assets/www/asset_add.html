@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *; img-src 'self' data: content:;" />
+	<title></title>
+	
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/framework.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/notify.css">
+
+	
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/jqueryui.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/framework-plugins.js"></script>
+	<script type="text/javascript" src="js/JsBarcode.all.min.js"></script>
+	<script src="js/notify.js"></script>
+
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script> 
+	    $(function(){
+	      $(".leftMenu").load("left_menu.html"); 
+	    });
+	    
+
+	</script> 
+</head>
+
+<body class="left-sidebar"" onload = "loadCombos();">
+	<div id="header-fixed" class="header-style-1"> <a class="header-1 open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a> <h2 class="header-logo" href="#">Add Detail</h2>
+	</div>
+	<div class="all-elements">
+		<div class="snap-drawers">
+		  	<div class="snap-drawer snap-drawer-left leftMenu"></div>
+		  
+			<div id="content" class="snap-content">
+				<div class="content">
+				  	<div class="header-clear-large"></div>
+				  	<!--Page content goes here, fixed elements go above the all elements class-->
+				 
+				    <div class="container">
+					      <ul class="tabs">
+					        <li class="tab-link active-tab" data-tab="tab-2">Add Items</li>
+					      </ul>
+				
+						<form   enctype="multipart/form-data" 
+							class="detail_form add_asset_form" id="add_assest_form">
+							
+							<div id="tab-2" class="tab-content other-tab" style="display: block;">
+								
+								
+								<h4>Folder Name</h4>
+								<div>
+								 <select id="folder_name" name="folder_name" class="requiredfield" onchange="getFolderValue(this.value)">
+								    <option value="" >Select Folder</option>
+								  </select>
+								</div>
+
+<!-- 								<h4>Box</h4>
+								<div>
+								  <select id="box" name="box" class="requiredfield" onchange="getBoxValue(this.value)">
+								    <option value="">Select Box</option>
+								  </select>
+								</div> -->
+								
+								<h4>Major Categories</h4>
+								<div>
+								  <select id="major_id" name="major_id" class="requiredfield" onchange="getMajorCategoriesValue(this.value)">
+								    <option value="">Select Major Category</option>
+								  </select>
+								</div>
+								<!-- <h4>Type</h4>
+								<div>
+								   <select id="type" name="type" class="requiredfield" onchange="getTypeValue(this.value)">
+								    <option value="">Select type</option>
+								  </select>
+								</div>	 -->
+								<h4>Minor Categories</h4>
+								<div>
+								  <select id="minor_id" name="minor_id">
+								    <option value="">Select Minor Category</option>
+								  </select>
+								</div>
+								 <h4>Key Text</h4>
+								<div>
+								  <input type="text" name="f5keytext" id="f5keytext">
+								</div> 	
+								<h4>Key Text 2</h4>
+								<div>
+								  <input type="text" name="f5keytext2" id="f5keytext2">
+								</div> 	
+								<h4>Key Text 3</h4>
+								<div>
+								  <input type="text" name="f5keytext3" id="f5keytext3">
+								</div> 											
+								<h4>Key Date 1</h4>
+								<div>
+								  <input type="date" name="f5keydate" id="f5keydate">
+								</div>
+								<h4>Key Date 2</h4>
+								<div>
+								  <input type="date" name="f5keydate2" id="f5keydate2">
+								</div>				
+								<h4>Key Amt 1</h4>
+								<div>
+								  <input type="text" name="f5keyamt1" id="f5keyamt1">
+								</div> 
+								<h4>Key Amt 2</h4>
+								<div>
+								  <input type="text" name="f5keyamt2" id="f5keyamt2">
+								</div> 
+								<h4>Key Amt 3</h4>
+								<div>
+								  <input type="text" name="f5keyamt3" id="f5keyamt3">
+								</div> 
+								<div>
+								<h4>Browse</h4>
+								<input type="button" value="Take A Picture" id="cemera" onclick="captureImage();">
+								</div>
+								<div>
+								<h4>Browse</h4>
+								<input type="button" value="Browse From Gallery" id="gallery" onclick="getImage();">
+								</div>
+								<table>
+									<tr >
+										<td><img src="" id="img1" width="50" height="50" alt=""> <input type="button" name="" id="removeButton1" class="imagebuttons" onclick="removeImage('1');" value="Remove"></td>
+										<td><img src="" id="img2" width="50" height="50" alt=""><input type="button" name="" id="removeButton2"onclick="removeImage('2');" class="imagebuttons" value="Remove"></td>
+										<td><img src="" id="img3" width="50" height="50" alt=""><input type="button" name="" id="removeButton3" onclick="removeImage('3');" class="imagebuttons" value="Remove"></td>
+										<td><img src="" id="img4" width="50" height="50" alt=""> <input type="button" name="" id="removeButton4" onclick="removeImage('4');" class="imagebuttons" value="Remove"></td>
+										<td><img src="" id="img5" width="50" height="50" alt=""> <input type="button" name="" id="removeButton5"onclick="removeImage('5');" class="imagebuttons" value="Remove"></td>
+									</tr>
+								</table>
+							</div>
+							<div>
+								<label id="lbl1"> </label>
+							</div>
+							<!-- <input type="hidden" name="action" id="action" value="uploadimage"> -->
+							<input type="hidden" name="image1" id="image1">
+							<input type="hidden" name="image2" id="image2">
+							<input type="hidden" name="image3" id="image3">
+							<input type="hidden" name="image4" id="image4">
+							<input type="hidden" name="image5" id="image5">
+							<button type="submit" class="button button-dark button_with submit_button">Save</button>
+							<button type="button" class="button button-dark button_with edit_button" onclick="checkArrayData();">Upload to Server</button>
+						</form>
+					</div>  
+				        <!-- End of entire page content--> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<script> 
+	 
+	    $(document).ready(function () {
+	document.addEventListener("deviceready", function(){
+			document.addEventListener("backbutton", onBackKeyDown, false);
+		}, false);
+	
+	function onBackKeyDown(){
+		window.location = "dashboard.html";
+	}
+});
+
+	</script> 
+</body>

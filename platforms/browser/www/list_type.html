@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *; img-src 'self' data: content:;" />
+  <title></title>
+  
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/framework.css" rel="stylesheet" type="text/css">
+  <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="css/animate.css" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="js/jqueryui.js"></script>
+  <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="js/framework-plugins.js"></script>
+  <script type="text/javascript" src="js/JsBarcode.all.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/type.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script> 
+      $(function(){
+        $(".leftMenu").load("left_menu.html"); 
+      });
+      
+
+  </script> 
+</head>
+
+<body class="left-sidebar"" onload = "getType();">
+ <div id="header-fixed" class="header-style-1"> <a class="header-1 open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
+  <h2 class="header-logo" href="#">View Type</h2>
+  </div>
+  <div class="all-elements">
+    <div class="snap-drawers">
+        <div class="snap-drawer snap-drawer-left leftMenu"></div>
+      
+      <div id="content" class="snap-content">
+        <div class="content">
+            <div class="header-clear-large"></div>
+            <!--Page content goes here, fixed elements go above the all elements class-->
+         
+            <div class="container">
+                <ul class="tabs">
+                  <li class="tab-link active-tab" data-tab="tab-2">View Type</li>
+                </ul>
+              <div id="tab-2" class="tab-content other-tab" style="display: block;">
+                <div id="typeDiv">
+                </div>                
+              </div>
+          </div>  
+                <!-- End of entire page content--> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <script> 
+   
+      $(document).ready(function () {
+  document.addEventListener("deviceready", function(){
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }, false);
+  
+  function onBackKeyDown(){
+    window.location = "type.html";
+  }
+});
+
+  </script> 
+</body>
